@@ -2,6 +2,9 @@
     "name": "ppp-tools",
     "version": "1.0.0",
     "description": "A collection of javascript objects and methods for working with Pixel Paint (*.ppp) files.",
+    "scripts": {
+        "build": "webpack --config webpack.common.cjs"
+    },
     "keywords": ["helpers", "library", "ape apps", "module", "ppp", "pixel paint"],
     "homepage": "https://www.ape-apps.com",
     "bugs": {
@@ -21,12 +24,15 @@
         "type": "git",
         "url": "https://github.com/bastecklein/ppp-tools"
     },
-    "main": "ppp-tools.js",
+    "main": "src/index.js",
     "config": {},
     "dependencies": {
         "common-helpers": "git+ssh://git@github.com:bastecklein/common-helpers.git#main"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "webpack": "*",
+        "webpack-cli": "*"
+    },
     "private": false,
     "type": "module"
 }

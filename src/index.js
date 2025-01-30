@@ -1,4 +1,4 @@
-import commonHelpers from "common-helpers";
+import { guid, rgbToHex } from "common-helpers";
 
 export const COMPOSIT_OPERATIONS = [
     "source-over",
@@ -31,7 +31,7 @@ export const COMPOSIT_OPERATIONS = [
 
 export class PixelPaintData {
     constructor() {
-        this.id = commonHelpers.guid();
+        this.id = guid();
 
         this.frames = [];
         this.layers = [];
@@ -52,7 +52,7 @@ export class PixelPaintData {
 
 export class PixelPaintLayer {
     constructor() {
-        this.id = commonHelpers.guid();
+        this.id = guid();
 
         this.mode = null;
         this.name = null;
@@ -63,7 +63,7 @@ export class PixelPaintLayer {
 
 export class PixelPaintFrame {
     constructor() {
-        this.id = commonHelpers.guid();
+        this.id = guid();
 
         this.layerData = {};
     }
@@ -518,7 +518,7 @@ function convertCanvastoVPP(canvas, context, callback) {
     const vppData = {
         author: null,
         size: 0,
-        id: commonHelpers.guid(),
+        id: guid(),
         voxels: [],
         precompiledat: null,
         vars: {
@@ -551,7 +551,7 @@ function convertCanvastoVPP(canvas, context, callback) {
             continue;
         }
 
-        const hex = commonHelpers.rgbToHex(r, g, b);
+        const hex = rgbToHex(r, g, b);
 
         let vxl = {
             x: x - withOffset,
